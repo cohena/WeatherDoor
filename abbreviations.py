@@ -1,7 +1,10 @@
 weather_abbreviations = {
+    "Partly": "Pt",
     "Clear": "Clr",
     "Rain": "Rn",
-    "rain": "rn"
+    "rain": "rn",
+    "Cloudy": "Cldy",
+
 }
 
 time_abbreviations = {

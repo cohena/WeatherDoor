@@ -26,8 +26,9 @@ def update_screen():
 
     currently = latest_forecast.currently().d
     feels_like = int(round(currently['apparentTemperature']))
-    wind_speed = int(round(currently['windSpeed']))
-    top_line = "Feels %s - %s mph" % (feels_like, wind_speed)
+    high_temp = int(round(latest_forecast.daily().data[0].d['apparentTemperatureMax']))
+    low_temp = int(round(latest_forecast.daily().data[0].d['apparentTemperatureMin']))
+    top_line = "~%s - %sH %sL" % (feels_like, high_temp, low_temp)
 
     minutely = latest_forecast.minutely()
     bottom_line = "%s" % minutely.summary

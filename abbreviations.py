@@ -9,5 +9,6 @@ weather_abbreviations = {
 
 time_abbreviations = {
     "minute": "min",
-    "hour": "hr"
+    "hour": "hr",
+    "for the": "=>"
 }

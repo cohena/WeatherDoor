@@ -3,12 +3,16 @@ weather_abbreviations = {
     "Clear": "Clr",
     "Rain": "Rn",
     "rain": "rn",
-    "Cloudy": "Cldy",
+    "Cloudy": "Cld",
+    "cloudy": "cld",
+
 
 }
 
 time_abbreviations = {
     "minute": "min",
     "hour": "hr",
-    "for the": "=>"
+    "for the": "~",
+    "afternoon": "aft",
+    "until": "~"
 }

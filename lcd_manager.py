@@ -51,7 +51,7 @@ def display_on_lcd(text_rows):
     squished_rows = []
     for row in text_rows[:LCD_HEIGHT]:
         if len(row) > LCD_WIDTH:
-            squished_rows.append(squish_text(row)[:LCD_WIDTH])
+            squished_rows.append(squish_text(row)[:LCD_WIDTH].center(LCD_WIDTH))
         else:
             squished_rows.append(row.center(LCD_WIDTH))
     message("\n".join(squished_rows[:LCD_HEIGHT]))

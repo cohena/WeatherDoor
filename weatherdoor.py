@@ -14,10 +14,11 @@ END_HOUR = 22
 
 
 latest_forecast = None
+last_was_daily = False
 
 
 def update_screen():
-    global latest_forecast
+    global latest_forecast, last_was_daily
 
     if not START_HOUR <= arrow.now('US/Pacific').hour < END_HOUR:
         lcd_manager.off()
@@ -25,16 +26,23 @@ def update_screen():
         return
 
     currently = latest_forecast.currently().d
-    feels_like = int(round(currently['apparentTemperature']))
-    high_temp = int(round(latest_forecast.daily().data[0].d['apparentTemperatureMax']))
-    low_temp = int(round(latest_forecast.daily().data[0].d['apparentTemperatureMin']))
-    top_line = "~%s - %sH %sL" % (feels_like, high_temp, low_temp)
-
     minutely = latest_forecast.minutely()
-    bottom_line = "%s" % minutely.summary
+    daily = latest_forecast.daily().data[0].d
+
+    feels_like = int(round(currently['apparentTemperature']))
+    high_temp = int(round(daily['apparentTemperatureMax']))
+    low_temp = int(round(daily['apparentTemperatureMin']))
+    top_line = "%s - %sH %sL" % (feels_like, high_temp, low_temp)
+
+    if last_was_daily:
+        bottom_line = "%s" % minutely.summary
+        last_was_daily = False
+    else:
+        bottom_line = "%s" % daily['summary']
+        last_was_daily = True
 
     display_on_lcd([top_line, bottom_line])
-    time.sleep(15)
+    time.sleep(5)
 
 
 def update_forecast():

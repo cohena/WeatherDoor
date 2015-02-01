@@ -14,6 +14,8 @@ time_abbreviations = {
     "hour": "hr",
     "for the": "~",
     "afternoon": "aft",
+    "starting": "~",
     "until": "~",
+    "tonight": "tnght",
     ".": ""
 }

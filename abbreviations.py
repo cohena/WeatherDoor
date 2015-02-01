@@ -17,5 +17,6 @@ time_abbreviations = {
     "starting": "~",
     "until": "~",
     "tonight": "tnght",
-    ".": ""
+    ".": "",
+    "throughout the": "~"
 }

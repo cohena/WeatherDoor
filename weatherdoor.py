@@ -53,7 +53,11 @@ def update_forecast():
         return
 
     print "Updating forecast..."
-    latest_forecast = forecastio.load_forecast(API_KEY, *HOME)
+    try:
+        latest_forecast = forecastio.load_forecast(API_KEY, *HOME)
+    except Exception as e:
+        display_on_lcd([str(e)[0:lcd_manager.LCD_WIDTH], str(e)[lcd_manager.LCD_WIDTH:lcd_manager.LCD_WIDTH*2]])
+        raise e
 
 
 class StoppableThread(threading.Thread):

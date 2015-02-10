@@ -5,7 +5,8 @@ weather_abbreviations = {
     "rain": "rn",
     "Cloudy": "Cld",
     "cloudy": "cld",
-
+    "Light": "Lt",
+    "light": "lt",
 
 }
 
@@ -18,5 +19,8 @@ time_abbreviations = {
     "until": "~",
     "tonight": "tnght",
     ".": "",
-    "throughout the": "~"
+    "throughout the": "~",
+    "tomorrow": "tmrw",
+    "evening": "eve",
+    "continuing until": "~"
 }

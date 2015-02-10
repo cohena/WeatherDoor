@@ -22,5 +22,6 @@ time_abbreviations = {
     "throughout the": "~",
     "tomorrow": "tmrw",
     "evening": "eve",
-    "continuing until": "~"
+    "continuing until": "~",
+    "this": ""
 }

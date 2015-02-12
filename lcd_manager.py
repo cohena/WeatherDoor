@@ -39,6 +39,7 @@ def squish_text(text):
             text = text.replace('To ', '')
             text = text.replace('to ', '')
         elif squishes == 2:
+            text = text.title()
             text = text.replace(' ', '')
         else:
             text = text[:LCD_WIDTH]

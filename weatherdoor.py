@@ -43,7 +43,6 @@ def update_screen():
         last_was_hourly = True
 
     display_on_lcd([top_line, bottom_line])
-    time.sleep(5)
 
 
 def update_forecast():
@@ -53,11 +52,7 @@ def update_forecast():
         return
 
     print "Updating forecast..."
-    try:
-        latest_forecast = forecastio.load_forecast(API_KEY, *HOME)
-    except Exception as e:
-        display_on_lcd([str(e)[0:lcd_manager.LCD_WIDTH], str(e)[lcd_manager.LCD_WIDTH:lcd_manager.LCD_WIDTH*2]])
-        raise e
+    latest_forecast = forecastio.load_forecast(API_KEY, *HOME)
 
 
 class StoppableThread(threading.Thread):
@@ -82,7 +77,6 @@ class APIThread(StoppableThread):
                 update_forecast()
             except Exception as e:
                 display_on_lcd([str(e)[0:lcd_manager.LCD_WIDTH], str(e)[lcd_manager.LCD_WIDTH:lcd_manager.LCD_WIDTH*2]])
-                raise e
             time.sleep(120)
 
 
@@ -93,7 +87,7 @@ class ScreenThread(StoppableThread):
                 update_screen()
             except Exception as e:
                 display_on_lcd([str(e)[0:lcd_manager.LCD_WIDTH], str(e)[lcd_manager.LCD_WIDTH:lcd_manager.LCD_WIDTH*2]])
-                raise e
+            time.sleep(5)
 
 if __name__ == "__main__":
     update_forecast()

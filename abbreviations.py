@@ -7,7 +7,7 @@ weather_abbreviations = {
     "cloudy": "cld",
     "Light": "Lt",
     "light": "lt",
-
+    "Drizzle": "Drzl"
 }
 
 time_abbreviations = {
@@ -24,5 +24,6 @@ time_abbreviations = {
     "evening": "eve",
     "continuing until": "~",
     "this": "",
-    "later": "~"
+    "later": "~",
+    "stopping in": "for"
 }

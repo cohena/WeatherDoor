@@ -35,6 +35,7 @@ def squish_text(text):
             for abbrev_dict in [weather_abbreviations, time_abbreviations]:
                 for k, v in abbrev_dict.iteritems():
                     text = text.replace(k, v)
+            text = text.replace('  ', ' ')
         elif squishes == 1:
             text = text.replace('To ', '')
             text = text.replace('to ', '')

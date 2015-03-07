@@ -25,5 +25,6 @@ time_abbreviations = {
     "continuing until": "~",
     "this": "",
     "later": "~",
-    "stopping in": "for"
+    "stopping in": "for",
+    "morning": "morn"
 }
